@@ -44,7 +44,7 @@ const WampAuth = function () {
   this.wampcra_auth = function (realmName, secureDetails, secret, extra, cb) {
     console.log(realmName, secureDetails, secret, extra)
   }
-  this.authorize = function (session, funcClass, uniUri) {
+  this.authorize = async function (session, funcClass, uniUri) {
     const userDetails = session.getUserDetails()
     console.log('authorize:', funcClass, uniUri, 'userDetails:', userDetails)
     if (userDetails.role === 'admin') {
